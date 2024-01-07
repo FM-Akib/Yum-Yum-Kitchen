@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Yumm Yumm Kitchen</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+        *{
+            padding: 0.5em;
+        }
+        .btn{
+            height:44px;
+        }
+        .chip{
+            
+            background-color:rgb(17, 167, 17);
+            color: white;
+            border-radius:5px;
+
+        }
+        #noFoodfound h1{
+             color: red;
+        }
+        #loading{
+          margin-bottom:600px;
+          margin-top: 200px;
+        }
+        #show-all{
+          display:flex;
+          justify-content: center;
+        }
+        #MainTitle{
+          font-family: 'Caveat', cursive;
+          font-size: 5rem;
+          color: seagreen;
+        }
+    </style>
+</head>
+<body>
+ 
+    
+    <h1 id="MainTitle" class="text-2xl font-bold d-flex align-items-center justify-content-center" >
+        Yumm Yumm Kitchen
+    </h1>
+
+     <div class="d-flex align-items-center justify-content-center gap-2">
+        <input id="inputText" class="rounded-4 p-2"type="text" placeholder="search here">
+        <button onclick="searching()"  class="btn btn-primary"type="button">Search</button>
+     </div>
+ 
+
+     <div id="loading" class="d-none">
+      <div class="d-flex justify-content-center text-danger">
+       <div class="spinner-border" role="status">
+         <span class="visually-hidden">Loading...</span>
+       </div>
+     </div>
+   </div>
+
+  
+
+      <section id="mealSection">
+        <div id="mealContainer"class="row row-cols-1 row-cols-md-3 g-4">
+           
+          </div>
+      </section>
+      <div id="show-all" class="d-none">
+        <div id="show-all-btn"class="btn btn-primary ">Show All</div>
+       </div>
+
+      <div class="modal fade " id="foodModel" tabindex="-1" aria-labelledby="foodModelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="foodModelLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="foodMealBody"class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+     <section>
+
+      <div id="noFoodfound" class="d-none">
+        <h1>No food found!! Please try another.</h1>
+      </div>
+     </section>
+      
+    
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./api.js"></script>
+</body>
+</html>
